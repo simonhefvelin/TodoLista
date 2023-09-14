@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export function NewTodoForm(props) {
-    props.onSubmit
+    
     const [newItem, setNewItem] = useState("");
 
 
@@ -11,7 +11,7 @@ export function NewTodoForm(props) {
 
     props.onSubmit(newItem)
 
-    setNewItem("");
+    setNewItem("")
   }
 
   return (
