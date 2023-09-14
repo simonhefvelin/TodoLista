@@ -4,6 +4,7 @@ import "./styles.css";
 import { useEffect, useState } from "react";
 
 export default function App() {
+  //Hämtar från localstorage
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS")
     if (localValue == null) return []
@@ -11,10 +12,12 @@ export default function App() {
     return JSON.parse(localValue)
   })
 
+  //Sparar i localstorage
   useEffect(() => {
     localStorage.setItem("ITEM", JSON.stringify(todos))
   }, [todos])
 
+  //Skapar en todo
   function addTodo(title) {
     setTodos((currentTodos) => {
       return [
